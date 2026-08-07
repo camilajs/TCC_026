@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+:root{
+    /* Cores plano de fundo */
+    --profundo: #0F0E6B;
+    --escuro: #09086E;
+    --lilas: #BE74BE;
+    --lilas-claro: #D481D2;
+    --roxo-escuro: #703B94;
+
+    /* Fundos Dark */
+    --bg: #06051C;
+    --bg2: #0B0A28;
+    --bg3: #100F35;
+    --bg4: #16154A;
+
+    /* Cores textos */
+    --tx: #ECE9F7;
+    --tx2: #9E9ABD;
+    --tx3: #65618A;
+
+    /* Status dos produtos */
+    --amarelo: #BA7517;
+    --amarelo-claro: #FAEEDA;
+    --vermelho: #F80200;
+    --vermelho-claro: #FCEBEB;
+    --verde: #1D9E75;
+    --verde-claro: #E1F5EE;
+
+    /* Fontes */
+    --dm-sans: "DM Sans", sans-serif;
+    --dm-mono: "DM Mono", monospasce;
+}
+
 body{
     background-image: linear-gradient(to bottom, #06051C, #56388D, #703B94, #A650A6);
     background-repeat: no-repeat;
@@ -8,6 +42,6 @@ body{
 
 /* Cabeçalho */
 header{
-    
+    display: flex;
+    align-content: space-between;
 }
-
