@@ -7,6 +7,8 @@
     --lilas: #BE74BE;
     --lilas-claro: #D481D2;
     --roxo-escuro: #703B94;
+    --roxo-azulado: #56388D;
+    --rosa: #A650A6;
 
     /* Fundos Dark */
     --bg: #06051C;
@@ -15,7 +17,7 @@
     --bg4: #16154A;
 
     /* Cores textos */
-    --tx: #ECE9F7;
+    --tx: rgb(236, 233, 247);
     --tx2: #9E9ABD;
     --tx3: #65618A;
 
@@ -32,16 +34,88 @@
     --dm-mono: "DM Mono", monospasce;
 }
 
+/* Geral */
 body{
-    background-image: linear-gradient(to bottom, #06051C, #56388D, #703B94, #A650A6);
+    background-image: linear-gradient(to bottom, var(--bg), var(--roxo-azulado), var(--roxo-escuro), var(--rosa));
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
     min-height: 100vh;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 /* Cabeçalho */
 header{
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
+    border-bottom: var(--tx) 1px solid;
+    padding: 5px;
+}
+
+#header-buttons{
+    position: relative;
+    top: 2em;
+}
+
+#menu{
+    background: transparent;
+    color: var(--tx2);
+    border: none;
+}
+
+#acess{
+    background-color: rgb(236, 233, 247, 0.3);
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    color: var(--tx);
+    
+}
+
+/* Página inicial */
+    /* Topo */
+
+@keyframes textAnimation{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#top{
+    display: flex;
+    justify-content: space-between;
+    flex: auto;
+    margin-top: 0;
+    animation-name: textAnimation;
+    animation-duration: 4s;
+}
+#estoque{
+    mask-image: linear-gradient(to right, transparent, black 60%, black 100%);
+}
+
+#top-text{
+    padding: 2em 0 0 2em;
+    align-content: center;
+}
+#top-text>h2{
+    color: var(--tx);
+    font-family: var(--dm-mono);
+    font-weight: 100;
+    font-style: italic;
+}
+
+#top-text>p{
+    color: var(--tx2);
+    font-family: var(--dm-sans);
+    font-weight: 300;
+}
+
+#top-text>button{
+    background-color: rgb(236, 233, 247, 0.3);
+    border: none;
+    color: var(--tx);
+    padding: 1em;
+    border-radius: 10px;
 }
