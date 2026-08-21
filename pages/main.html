@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fb4204d775.js" crossorigin="anonymous"></script>
     <title>ATHENA</title>
 </head>
 <body>
+
+    /*Cabeçalho*/
     <header>
         <div id="logo">
             <img src="../images/logo.svg" alt="Logo" style="width: 100px; height: 80px;">
@@ -16,6 +19,8 @@
             <button class="header-btn" id="acess"><span>Acessar sistema</span></button>
         </div>
     </header>
+
+    /*Bloco principal*/
     <main id="main">
         <div id="initial-page">
             <div id="top">
@@ -30,10 +35,58 @@
                         <button id="top-btn">Conhecer agora</button>
                 </div>  
                 <div id="top-image">
-                    <img src="../images/basement.jpg" alt="Estoque" id="estoque">
+                    <img src="" alt="Estoque" id="estoque">
+                </div>
+            </div>
+            <div id="middle">
+                <div id="carousel">
+                    <div id="carousel-cards"></div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        cards =[
+            {
+                title: "Balança",
+                symbol: "",
+                description: "Equipado com balança inteligente para monitoramento dos produtos"
+            },
+            {
+                title: "Sensor",
+                symbol: "",
+                description: "Sensores de presença e movimento para rastrear a movimentação dos produtos"
+            },
+            {
+                title: "Alerta",
+                symbol: "",
+                description: "Sistema de alerta para notificar sobre níveis críticos de estoque"
+            }
+        ]
+
+        const carouselCards = document.getElementById("carousel-cards");
+        cards.forEach(card =>{
+            const cardElement = document.createElement("div");
+            cardElement.classList.add("card");
+
+            const titleElement = document.createElement("h3");
+            titleElement.textContent = card.title;
+            titleElement.classList.add("card-title")
+            cardElement.appendChild(titleElement);
+
+            //const symbolElement = document.createElement('i');
+            //symbolElement.classList.add('fa-solid fa-thumbs-up');
+            //cardElement.appendChild('symbolElement');
+
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = card.description;
+            cardElement.appendChild(descriptionElement);
+
+            carouselCards.appendChild(cardElement);
+        })
+        
+    </script>    
+
 </body>
 </html>

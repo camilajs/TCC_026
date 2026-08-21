@@ -35,12 +35,19 @@
 }
 
 /* Geral */
+@keyframes textAnimation{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 body{
-    background-image: linear-gradient(to bottom, var(--bg), var(--roxo-azulado), var(--roxo-escuro), var(--rosa));
+    background-image: linear-gradient(to bottom, var(--bg) 17% , var(--roxo-azulado) 60%, var(--roxo-escuro)80%, var(--rosa)94%);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
     min-height: 100vh;
+    animation-name: textAnimation;
+    animation-duration: 4s;
 }
 
 button:hover{
@@ -78,18 +85,11 @@ header{
 /* Página inicial */
     /* Topo */
 
-@keyframes textAnimation{
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
 #top{
     display: flex;
     justify-content: space-between;
     flex: auto;
     margin-top: 0;
-    animation-name: textAnimation;
-    animation-duration: 4s;
 }
 #estoque{
     mask-image: linear-gradient(to right, transparent, black 60%, black 100%);
@@ -119,3 +119,20 @@ header{
     padding: 1em;
     border-radius: 10px;
 }
+
+    /*Meio*/
+
+#carousel-cards{
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+
+.card{
+    border: 1px solid var(--tx2);
+    color: var(--tx);
+    padding: 30px;
+    margin: 5px;
+    width: 1000px;
+}
+
