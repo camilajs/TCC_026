@@ -10,3 +10,9 @@ Tecnologias usadas até o momento:
 - HTML;
 - CSS;
 - Bootstrap.
+
+Próximos passos:
+
+- Conexão ao banco de dados (em nuvem);
+- Adição de inteligência artificial para compra de produtos;
+- Integração com hardware (balança).
