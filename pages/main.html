@@ -2,50 +2,89 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/fb4204d775.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>ATHENA</title>
 </head>
 <body>
 
-    /*Cabeçalho*/
-    <header>
-        <div id="logo">
-            <img src="../images/logo.svg" alt="Logo" style="width: 100px; height: 80px;">
-        </div>
-        <div id="header-buttons">
-            <button class="header-btn" id="menu">Menu</button>
-            <button class="header-btn" id="acess"><span>Acessar sistema</span></button>
-        </div>
-    </header>
+    <!--Navegação-->
+    <nav class="navbar navbar-expand-sm ">
+    <a class="navbar-brand" href="#"><img src="../images/logo.svg" alt="logo" width="100px" height="100px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    /*Bloco principal*/
-    <main id="main">
-        <div id="initial-page">
-            <div id="top">
-                <div id="top-text">
-                    <h2>Enxergue o que acontece no seu estoque.</h2>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li>
+                <button class="access">Acessar sistema</button>
+            </li>
+        </ul>   
+    </div>
+    </nav>
 
-                    <p>Com a visão de uma coruja, o ATHENA monitora produtos, 
+    <!--Bloco principal-->
+    <div class="container d-lg-flex" id="initial-page">
+        <div class="container">
+            <h2>Enxergue o que acontece no seu estoque</h2>
+
+            <p>Com a visão de uma coruja, o ATHENA monitora produtos, 
                         movimentações e níveis de estoque em tempo real, unindo tecnologia, 
                         sensores e inteligência para identificar necessidades antes que elas 
                         se tornem problemas.</p>
-                    
-                        <button id="top-btn">Conhecer agora</button>
-                </div>  
-                <div id="top-image">
-                    <img src="" alt="Estoque" id="estoque">
-                </div>
-            </div>
-            <div id="middle">
-                <div id="carousel">
-                    <div id="carousel-cards"></div>
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div id="demo" class="carousel slide" data-ride="carousel"> 
+                <div class="carousel-inner"></div>
             </div>
         </div>
-    </main>
+    </div>
 
+    <!--Meio-->
+    <div class="container d-lg-flex" id="about-us">
+        <div class="container">
+            <h2>Sobre nós</h2>
+
+            <p>
+                Somos estudantes na área de tecnologia e desenvolvemos o projeto como trabalho
+                de conclusão de curso.
+
+                Nosso objetivo com o projeto foi melhorar o acompanhamento dos estoques, evitando
+                a falta ou o excesso de produtos.
+            </p>
+        </div>
+    </div>
+
+
+    <!--Rodapé-->
+    <div class="container d-lg-flex" id="footer">
+        <div class="container">
+            <div id="contato">
+                <h3>Contate-nos</h3>
+                <p>Camila: cjesusantana8@gmail.com</p>
+                <p>Vitória: viihlima829@gmail.com</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <script>
         cards =[
             {
@@ -65,25 +104,29 @@
             }
         ]
 
-        const carouselCards = document.getElementById("carousel-cards");
-        cards.forEach(card =>{
-            const cardElement = document.createElement("div");
-            cardElement.classList.add("card");
+        cards.forEach((card, i) =>{
+            const carouselInner = document.querySelector('.carousel-inner');
 
-            const titleElement = document.createElement("h3");
-            titleElement.textContent = card.title;
-            titleElement.classList.add("card-title")
-            cardElement.appendChild(titleElement);
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
 
-            //const symbolElement = document.createElement('i');
-            //symbolElement.classList.add('fa-solid fa-thumbs-up');
-            //cardElement.appendChild('symbolElement');
+            if (i == 0) carouselItem.classList.add('active');
 
-            const descriptionElement = document.createElement("p");
-            descriptionElement.textContent = card.description;
-            cardElement.appendChild(descriptionElement);
+            const carouselCard = document.createElement('div');
+            carouselCard.classList.add('card');
 
-            carouselCards.appendChild(cardElement);
+            const carouselHeader = document.createElement('div');
+            carouselHeader.classList.add('card-header');
+            carouselHeader.textContent = card.title;
+
+            const carouselBody = document.createElement('div');
+            carouselBody.classList.add('card-body');
+            carouselBody.textContent = card.description;
+
+            carouselCard.appendChild(carouselHeader);
+            carouselCard.appendChild(carouselBody);
+            carouselItem.appendChild(carouselCard);
+            carouselInner.appendChild(carouselItem);
         })
         
     </script>    
