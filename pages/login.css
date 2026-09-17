@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+:root {
+
+    /* Cores do ATHENA */
+    --profundo: #0F0E6B;
+    --lilas: #BE74BE;
+    --lilas-claro: #D481D2;
+    --roxo-escuro: #703B94;
+    --roxo-azulado: #56388D;
+
+    /* Fundos */
+    --bg: #06051C;
+    --bg2: #0B0A28;
+    --bg3: #100F35;
+
+    /* Textos */
+    --tx: #ECE9F7;
+    --tx2: #9E9ABD;
+    --tx3: #65618A;
+
+    /* Fontes */
+    --dm-sans: "DM Sans", sans-serif;
+    --dm-mono: "DM Mono", monospace;
+}
+
+
+/* =========================
+   GERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 50%,
+            rgba(15, 14, 107, 0.6),
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(112, 59, 148, 0.4),
+            transparent 50%
+        ),
+        var(--bg);
+
+    color: var(--tx);
+
+    font-family: var(--dm-sans);
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 30px;
+
+    border-bottom: 1px solid rgba(236, 233, 247, 0.2);
+}
+
+
+#logo img {
+    width: 100px;
+    height: 80px;
+}
+
+
+#voltar {
+    color: var(--tx2);
+
+    text-decoration: none;
+
+    font-family: var(--dm-mono);
+
+    transition: 0.3s;
+}
+
+
+#voltar:hover {
+    color: var(--tx);
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+main {
+    min-height: calc(100vh - 101px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 100px;
+
+    padding: 50px;
+}
+
+
+/* =========================
+   CORUJA
+========================= */
+
+#login-image {
+    width: 40%;
+    text-align: center;
+}
+
+
+#coruja {
+    width: 280px;
+    height: auto;
+
+    margin-bottom: 20px;
+}
+
+
+#login-image h2 {
+    font-family: var(--dm-mono);
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+#login-image p {
+    color: var(--tx2);
+
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    max-width: 450px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#login-area {
+    width: 420px;
+}
+
+
+#login-card {
+    padding: 40px;
+
+    background: rgba(11, 10, 40, 0.75);
+
+    border: 1px solid rgba(190, 116, 190, 0.35);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+#login-card h1 {
+    margin: 0 0 10px;
+
+    font-family: var(--dm-mono);
+
+    font-size: 30px;
+
+    font-weight: 400;
+}
+
+
+#login-description {
+    color: var(--tx2);
+
+    margin-bottom: 35px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--tx);
+
+    font-size: 14px;
+}
+
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(190, 116, 190, 0.3);
+
+    background: rgba(6, 5, 28, 0.7);
+
+    color: var(--tx);
+
+    outline: none;
+
+    font-family: var(--dm-sans);
+
+    font-size: 15px;
+}
+
+
+.input-group input::placeholder {
+    color: var(--tx3);
+}
+
+
+.input-group input:focus {
+    border-color: var(--lilas);
+
+    box-shadow: 0 0 0 2px rgba(190, 116, 190, 0.1);
+}
+
+
+/* =========================
+   SENHA
+========================= */
+
+#senha-container {
+    position: relative;
+}
+
+
+#senha-container input {
+    padding-right: 50px;
+}
+
+
+#mostrar-senha {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--tx2);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+#entrar {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        90deg,
+        var(--roxo-escuro),
+        var(--lilas)
+    );
+
+    color: white;
+
+    font-family: var(--dm-mono);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#entrar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(190, 116, 190, 0.25);
+}
