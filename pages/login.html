@@ -15,109 +15,41 @@
 
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-
-        <div id="logo">
-            <img src="../images/logo.svg" alt="Logo ATHENA">
-        </div>
-
-        <a href="main.html" id="voltar">Voltar</a>
-
-    </header>
-
-
-    <!-- Área principal -->
     <main>
 
-        <!-- Imagem da coruja -->
-        <div id="login-image">
+        <h1>Entrar</h1>
 
-            <img src="../images/coruja-logo.jpeg" alt="Coruja ATHENA" id="coruja">
+        <p>Tipo de acesso</p>
 
-            <h2>ATHENA</h2>
+        <button id="administrador">Administrador</button>
 
-            <p>
-                Enxergue o que acontece no seu estoque.
-            </p>
-
-        </div>
+        <button id="funcionario">Funcionário</button>
 
 
-        <!-- Área do login -->
-        <div id="login-area">
+        <label for="email">E-mail</label>
 
-            <div id="login-card">
-
-                <h1>Entrar</h1>
-
-                <p id="login-description">
-                    Acesse o sistema para acompanhar o estoque.
-                </p>
+        <input 
+            type="email" 
+            id="email" 
+            placeholder="Digite seu e-mail">
 
 
-                <!-- Tipo de acesso -->
-                <div class="input-group">
+ <label for="senha">Senha</label>
 
-                    <label>Tipo de acesso</label>
+<div id="senha-container">
 
-                    <button type="button" id="administrador">
-                        Administrador
-                    </button>
+    <input 
+        type="password" 
+        id="senha" 
+        placeholder="Digite sua senha">
 
-                    <button type="button" id="funcionario">
-                        Funcionário
-                    </button>
+    <button type="button" id="mostrar-senha">👁</button>
 
-                </div>
+</div>
 
+        <button id="entrar">Entrar</button>
 
-                <!-- E-mail -->
-                <div class="input-group">
-
-                    <label for="email">E-mail</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Digite seu e-mail">
-
-                </div>
-
-
-                <!-- Senha -->
-                <div class="input-group">
-
-                    <label for="senha">Senha</label>
-
-                    <div id="senha-container">
-
-                        <input
-                            type="password"
-                            id="senha"
-                            placeholder="Digite sua senha">
-
-                        <button
-                            type="button"
-                            id="mostrar-senha">
-                            👁
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Entrar -->
-                <button type="button" id="entrar">
-                    Entrar
-                </button>
-
-                <p id="mensagem"></p>
-
-            </div>
-
-        </div>
+        <p id="mensagem"></p>
 
     </main>
 
