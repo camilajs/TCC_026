@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estoque - ATHENA</title>
+
+    <link rel="stylesheet" href="estoque.css">
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+
+    <header>
+
+        <div id="logo">
+
+            <img src="../images/logo.svg" alt="Logo ATHENA">
+
+        </div>
+
+        <div id="usuario">
+
+            <span>Camila</span>
+
+            <small>Administrador</small>
+
+        </div>
+
+    </header>
+
+
+    <!-- Conteúdo -->
+
+    <main>
+
+        <section id="inicio">
+
+            <div>
+
+                <h1>Controle de estoque</h1>
+
+                <p id="descricao">
+                    Acompanhe os produtos e identifique quando o estoque precisa de atenção.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Resumo -->
+
+        <section id="resumo">
+
+            <div class="resumo-item">
+
+                <span>Produtos</span>
+
+                <strong>15</strong>
+
+            </div>
+
+
+            <div class="resumo-item">
+
+                <span>Estoque normal</span>
+
+                <strong class="verde">12</strong>
+
+            </div>
+
+
+            <div class="resumo-item">
+
+                <span>Estoque baixo</span>
+
+                <strong class="amarelo">2</strong>
+
+            </div>
+
+
+            <div class="resumo-item">
+
+                <span>Estoque crítico</span>
+
+                <strong class="vermelho">1</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Produtos -->
+
+        <section id="produtos">
+
+            <div id="produtos-titulo">
+
+                <div>
+
+                    <h2>Produtos</h2>
+
+                    <p>Produtos cadastrados no estoque</p>
+
+                </div>
+
+                <button id="novo-produto">
+                    + Cadastrar produto
+                </button>
+
+            </div>
+
+
+            <!-- Busca -->
+
+            <div id="pesquisa">
+
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Pesquisar produto..."
+                >
+
+            </div>
+
+
+            <!-- Lista de produtos -->
+
+            <div id="lista-produtos">
+
+
+                <!-- Detergente -->
+
+                <div class="produto">
+
+                    <div class="produto-topo">
+
+                        <h3>Detergente</h3>
+
+                        <span class="status normal">
+                            Normal
+                        </span>
+
+                    </div>
+
+                    <p>Produto de limpeza</p>
+
+                    <div class="produto-info">
+
+                        <span>
+                            Prateleira
+                            <strong>A-01</strong>
+                        </span>
+
+                        <span>
+                            Quantidade
+                            <strong>12</strong>
+                        </span>
+
+                        <span>
+                            Peso atual
+                            <strong>1,2 kg</strong>
+                        </span>
+
+                    </div>
+
+                    <button class="movimentacao">
+                         Registrar movimentação
+                    </button>
+
+                </div>
+
+
+                <!-- Cândida -->
+
+                <div class="produto">
+
+                    <div class="produto-topo">
+
+                        <h3>Cândida</h3>
+
+                        <span class="status baixo">
+                            Baixo
+                        </span>
+
+                    </div>
+
+                    <p>Produto de limpeza</p>
+
+                    <div class="produto-info">
+
+                        <span>
+                            Prateleira
+                            <strong>A-02</strong>
+                        </span>
+
+                        <span>
+                            Quantidade
+                            <strong>3</strong>
+                        </span>
+
+                        <span>
+                            Peso atual
+                            <strong>0,4 kg</strong>
+                        </span>
+
+                    </div>
+
+                    <button class="movimentacao">
+                         Registrar movimentação
+                    </button>
+
+                </div>
+
+
+                <!-- Sabão em pó -->
+
+                <div class="produto">
+
+                    <div class="produto-topo">
+
+                        <h3>Sabão em pó</h3>
+
+                        <span class="status critico">
+                            Crítico
+                        </span>
+
+                    </div>
+
+                    <p>Produto de limpeza</p>
+
+                    <div class="produto-info">
+
+                        <span>
+                            Prateleira
+                            <strong>B-01</strong>
+                        </span>
+
+                        <span>
+                            Quantidade
+                            <strong>0</strong>
+                        </span>
+
+                        <span>
+                            Peso atual
+                            <strong>0 kg</strong>
+                        </span>
+
+                    </div>
+
+                    <button class="movimentacao">
+                         Registrar movimentação
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+<script src="estoque.js"></script>
+
+</body>
+
+</html>
