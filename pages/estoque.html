@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estoque.css">
+    <title>Estoque</title>
+</head>
+<body>
+
+    <div id="opcoes">
+        <button onclick="funcionalidades(1)">Cadastrar o peso do produto</button>
+        <button onclick="funcionalidades(2)">Mostrar produtos</button>
+        <button onclick="funcionalidades(3)">Estatisticas</button>
+    </div>
+
+    <div id="filtrar-tipo">
+        <label for="select-product">Selecione a categoria:</label>
+        <select name="products" id="select-product">
+            <option value="1">Bebidas</option>
+            <option value="2">Produtos de limpeza</option>
+        </select>
+    </div>
+
+    <div id="campo-busca">
+        <label for="busca">Buscar:</label>
+        <input type="text" placeholder="Digite o nome do produto">
+    </div>
+
+    <div id="qtd-produtos">
+        <table>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Alcool</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Sabao</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function funcionalidades(numero){
+            console.log(numero)
+
+            const cadastrar = document.getElementById('cadastrar-peso');
+            const tabela = document.getElementById('qtd-produtos');
+
+
+            if (numero == 1){
+                cadastrar.style.display = 'flex';
+                tabela.style.display = 'none';
+            }else if(numero == 2){
+                cadastrar.style.display = 'none';
+                tabela.style.display = 'flex';
+            }
+        }
+    </script>
+
+    <script href="../api/estoque.js"></script>
+</body>
+</html>

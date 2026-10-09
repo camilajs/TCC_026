@@ -136,7 +136,7 @@ p{
 
 #footer{
     width: 100%;
-    background-color: var(--bg);
+    border-top: solid 1px var(--tx);
     color: var(--tx);
     padding: 1em;
     margin: 2em 0;

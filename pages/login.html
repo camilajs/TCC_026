@@ -15,47 +15,26 @@
 
 <body>
 
-    <main>
+    <form>
+    <div class="form-group">
+        <label for="inputEmail">Email:</label>
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Senha:</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="api();">Enviar</button>
+    </form>
 
-        <h1>Entrar</h1>
-
-        <p>Tipo de acesso</p>
-
-        <button id="administrador">Administrador</button>
-
-        <button id="funcionario">Funcionário</button>
-
-
-        <label for="email">E-mail</label>
-
-        <input 
-            type="email" 
-            id="email" 
-            placeholder="Digite seu e-mail">
+    <button onclick="window.location.href='./estoque.html'">Troca de pagina</button>
 
 
- <label for="senha">Senha</label>
-
-<div id="senha-container">
-
-    <input 
-        type="password" 
-        id="senha" 
-        placeholder="Digite sua senha">
-
-    <button type="button" id="mostrar-senha">👁</button>
-
-</div>
-
-        <button id="entrar">Entrar</button>
-
-        <p id="mensagem"></p>
-
-    </main>
-
-
-    <script src="login.js"></script>
-
+    <script>
+        function api(){
+            
+        }
+    </script>
 </body>
 
 </html>
