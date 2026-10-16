@@ -115,7 +115,7 @@ p{
     color: var(--tx);
 }
 
-.access{
+.button{
     background-image: linear-gradient(to right, var(--lilas) 50%, var(--lilas-claro) 80%);
     border: none;
     color: var(--tx);
@@ -123,7 +123,7 @@ p{
     padding: 8px;
 }
 
-.access:hover{
+.button:hover{
     background-color: var(--bg);
     color: var(--tx);
 }

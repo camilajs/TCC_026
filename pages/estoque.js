@@ -1,170 +1,60 @@
-// Tipo de usuário
-let tipoUsuario = "administrador";
+function funcionalidades(numero){
+    console.log(numero)
 
-// Elementos da página
-const usuario = document.querySelector("#usuario span");
-const perfil = document.querySelector("#usuario small");
-const botaoCadastro = document.querySelector("#novo-produto");
-const botoesMovimentacao = document.querySelectorAll(".movimentacao");
+    const cadastrar = document.getElementById('cadastrar-peso');
+    const tabela = document.getElementById('qtd-produtos');
 
 
-// Verifica o tipo de usuário
-if (tipoUsuario === "administrador") {
-
-    usuario.textContent = "Camila";
-    perfil.textContent = "Administrador";
-
-} else {
-
-    usuario.textContent = "Funcionário";
-    perfil.textContent = "Funcionário";
-
-    // Funcionário não pode cadastrar produtos
-    botaoCadastro.style.display = "none";
-
-}
-
-
-// Atualiza o status do produto
-function atualizarStatus(produto, quantidade) {
-
-    const status = produto.querySelector(".status");
-
-    if (quantidade == 0) {
-
-        status.textContent = "Crítico";
-        status.className = "status critico";
-
-    } else if (quantidade <= 3) {
-
-        status.textContent = "Baixo";
-        status.className = "status baixo";
-
-    } else {
-
-        status.textContent = "Normal";
-        status.className = "status normal";
-
+    if (numero == 1){
+        cadastrar.style.display = 'flex';
+        tabela.style.display = 'none';
+    }else if(numero == 2){
+        cadastrar.style.display = 'none';
+        tabela.style.display = 'flex';
     }
-
 }
 
+async function api(){
+    const url = `http://localhost:8080/produtos`
 
-// Atualiza os números do resumo
-function atualizarResumo() {
+    try{
+        const response = await fetch(url)
 
-    const produtos = document.querySelectorAll(".produto");
-
-    let normal = 0;
-    let baixo = 0;
-    let critico = 0;
-
-    produtos.forEach(function(produto) {
-
-        const status = produto.querySelector(".status");
-
-        if (status.classList.contains("normal")) {
-
-            normal++;
-
-        } else if (status.classList.contains("baixo")) {
-
-            baixo++;
-
-        } else if (status.classList.contains("critico")) {
-
-            critico++;
-
+        if(!response.ok){
+            console.log('Deu erro no fetch')
         }
 
-    });
+        const dados = await response.json();
 
-    document.querySelector(".verde").textContent = normal;
-    document.querySelector(".amarelo").textContent = baixo;
-    document.querySelector(".vermelho").textContent = critico;
-
+        console.log(dados);
+        tabela(dados);
+    }catch(erro){
+        console.log('Erro', erro);
+    }
 }
 
+function tabela(data){
+    const body = document.getElementById('tbody');
 
-// Registrar movimentação
-botoesMovimentacao.forEach(function(botao) {
+    data.forEach(p => {
+        const row = document.createElement('tr');
+        const nome = document.createElement('td');
+        const qtd = document.createElement('td');
+        const botao = document.createElement('td');
 
-    botao.addEventListener("click", function() {
+        nome.innerHTML = `${p.nome}`
+        row.appendChild(nome);
 
-        const produto = botao.closest(".produto");
+        qtd.innerHTML = `${p.quantidade}`
+        row.appendChild(qtd);
 
-        const nomeProduto = produto.querySelector("h3").textContent;
+        const add = document.createElement('button');
+        add.textContent = 'Adicionar';
+        botao.appendChild(add);
+        row.appendChild(botao);
 
-        const quantidadeElemento =
-            produto.querySelector(".produto-info span:nth-child(2) strong");
-
-        let quantidadeAtual = parseInt(quantidadeElemento.textContent);
-
-        const quantidade = prompt(
-            "Digite a quantidade retirada de " + nomeProduto + ":"
-        );
-
-        if (quantidade != null && quantidade != "") {
-
-            const quantidadeRetirada = parseInt(quantidade);
-
-            if (quantidadeRetirada > quantidadeAtual) {
-
-                alert("A quantidade retirada é maior que o estoque.");
-
-            } else if (quantidadeRetirada <= 0) {
-
-                alert("Digite uma quantidade válida.");
-
-            } else {
-
-                quantidadeAtual =
-                    quantidadeAtual - quantidadeRetirada;
-
-                quantidadeElemento.textContent = quantidadeAtual;
-
-                atualizarStatus(produto, quantidadeAtual);
-
-                atualizarResumo();
-
-                alert(
-                    "Movimentação registrada!\n" +
-                    "Produto: " + nomeProduto + "\n" +
-                    "Quantidade retirada: " + quantidadeRetirada
-                );
-
-            }
-
-        }
-
+        body.appendChild(row);
     });
+}
 
-});
-
-
-// Pesquisa de produtos
-const campoBusca = document.querySelector("#buscar");
-
-campoBusca.addEventListener("input", function() {
-
-    const texto = campoBusca.value.toLowerCase();
-
-    const produtos = document.querySelectorAll(".produto");
-
-    produtos.forEach(function(produto) {
-
-        const nome = produto.querySelector("h3").textContent.toLowerCase();
-
-        if (nome.includes(texto)) {
-
-            produto.style.display = "block";
-
-        } else {
-
-            produto.style.display = "none";
-
-        }
-
-    });
-
-});
+api();

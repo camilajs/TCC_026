@@ -1,3 +1,45 @@
-#qtd-produtos, #cadastrar-peso{
-    display: none;
+:root{
+    /* Cores plano de fundo */
+    --profundo: #0F0E6B;
+    --escuro: #09086E;
+    --lilas: #BE74BE;
+    --lilas-claro: #D481D2;
+    --roxo-escuro: #703B94;
+    --roxo-azulado: #56388D;
+    --rosa: #A650A6;
+
+    /* Fundos Dark */
+    --bg:  #06051C;
+    --bg2: #0B0A28;
+    --bg3: #100F35;
+    --bg4: #16154A;
+
+    /* Cores textos */
+    --tx: rgb(236, 233, 247);
+    --tx2: #9E9ABD;
+    --tx3: #65618A;
+
+    /* Status dos produtos */
+    --amarelo: #BA7517;
+    --amarelo-claro: #FAEEDA;
+    --vermelho: #F80200;
+    --vermelho-claro: #FCEBEB;
+    --verde: #1D9E75;
+    --verde-claro: #E1F5EE;
+
+    /* Fontes */
+    --dm-sans: "DM Sans", sans-serif;
+    --dm-mono: "DM Mono", monospasce;
+}
+
+.table{
+    color: var(--tx);
+    margin: auto;
+}
+
+#tabela{
+    display: flex;
+    min-height: 50vh;
+    max-width: 50vw;
+    margin: auto;
 }
