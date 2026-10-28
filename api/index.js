@@ -1,8 +1,10 @@
+require('dotenv').config();
 PORT = 8080
 const express = require('express');
 const cors = require('cors');
 
 const {router} = require('./route/produtosRoute');
+const loginRoute = require('./route/loginRoute');
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.get('/', (req, res) =>{
 })
 
 app.use('/produtos', router)
+app.use('/login', loginRoute.router)
 
 app.listen(PORT, ()=>{
     console.log('ta ouvindo essa bomba');
