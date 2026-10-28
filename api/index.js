@@ -1,4 +1,4 @@
-PORT = 8080
+const PORT = 8080;
 const express = require('express');
 const cors = require('cors');
 
@@ -16,6 +16,6 @@ app.get('/', (req, res) =>{
 
 app.use('/produtos', router)
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log('ta ouvindo essa bomba');
 });

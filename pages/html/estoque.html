@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estoque.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/estoque.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Estoque</title>
 </head>
 <body>
@@ -28,15 +28,26 @@
         <label for="busca">Buscar:</label>
         <input type="text" placeholder="Digite o nome do produto">
     </div>-->
-    <button class="button">Adicionar produto</button>
 
-    <div id="tabela">
+    <div id="menu">
+        <button class="button-menu" id="ver-prod">Ver produtos</button>
+        <button class="button-menu" id="add-prod">Adicionar produto</button>
+    </div>
+
+    <div id="tela-tabela">
+        <div id="tela-r">
+            <h3>Selecione um produto:</h3>
+            <select name="sel-prod" id="s-prod">
+
+            </select>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Quantidade</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody id="tbody">
@@ -45,7 +56,27 @@
         </table>
     </div>
 
+    <div id="tela-add">
+        <h3>Adicionar produto</h3>
+        <div id="form">
+            <div>
+                <label for="p-nome">Nome:</label>
+                <input type="text" placeholder="Insira o nome do produto" id="input-nome">
+            </div>
+            <div>
+                <label for="p-peso">Peso unitário:</label>
+                <button id="btn-peso" onclick="guardarPeso();">Pesar</button>
+                <p id="campo-peso"></p>
+            </div>
+        </div>
+        <button id="enviar" onclick="guardarProduto();">Enviar</button>
+    </div>
 
-    <script src="./estoque.js"></script>
+
+
+    <script src="../../api/arduino.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/estoque.js"></script>
+
 </body>
 </html>
